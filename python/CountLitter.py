@@ -1,7 +1,10 @@
 
 # через while сделать чтение из файла и контенизацию прочитанных строк
 #
-S = str("as de fr De ED FR qweer")
+with open('dataset_3363_3.txt', 'r') as strip:
+    S = strip.read().strip()
+
+#S = str("as de fr De ED FR qweer")
 output = open('CountLitter.txt', 'w')
 l = list(S.lower().split())
 s = set(l)
@@ -18,7 +21,7 @@ for key in d.keys():
         Buf = d[key]
 # for value in
 # output.write()
-print(d)
+#print(d)
 for key in d.keys():
     if d[key] == Buf:
         output.write(str(key) + " " + str(Buf) + " ")
