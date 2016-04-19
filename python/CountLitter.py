@@ -1,4 +1,3 @@
-#test commit for adding vizual
 # через while сделать чтение из файла и контенизацию прочитанных строк
 #
 with open('dataset_3363_3.txt', 'r') as strip:
