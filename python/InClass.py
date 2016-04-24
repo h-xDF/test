@@ -6,6 +6,15 @@ def add(parent,*heir):
         space[parent] = heir
 
 
+def explorer(parent,heir):
+    for i in range(len(space[parent]):
+        if i == heir:
+            print('YES')
+            return
+        else:
+            explorer()
+    if space[parent]
+
 
 
 space = dict()
@@ -19,3 +28,7 @@ for i in range(n):
         for i in range(2,len(command),1):
             buf.append(command[i])
         add(command[0],buf)
+
+q = int(input())
+    for i in range(m):
+        command = input().strip().split()
