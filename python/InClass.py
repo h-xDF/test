@@ -1,7 +1,10 @@
 
 def add(heir,parent):
     if len(parent) == 0:
-        space[heir] = []
+        if heir in  space:
+            return
+        else:
+            space[heir] = []
     else:
         for i in parent:
             if i in space:
@@ -24,35 +27,35 @@ def get(parent,heir):
 
 def explorer(parent,heir):
     if parent == heir:
-        #print('Yes')
-        return True
+        print('Yes')
+        return
 
     if get(parent,heir):
-        #print('Yes')
-        return True
+        print('Yes')
+        #return True
     else:
-        #print('No')
-        return False
+        print('No')
+        #return False
 
 
 
 
 space = dict()
-# n = int(input())
-# for i in range(n):
-#     command = input().strip().split()
-#     buf = []
-#     if len(command) == 1:
-#         add(command[0],buf)
-#     else:
-#         for i in range(2,len(command),1):
-#             buf.append(command[i])
-#         add(command[0],buf)
-#
-# q = int(input())
-# for i in range(q):
-#     command = input().strip().split()
-#     explorer(command[0],command[1])
+n = int(input())
+for i in range(n):
+    command = input().strip().split()
+    buf = []
+    if len(command) == 1:
+        add(command[0],buf)
+    else:
+        for i in range(2,len(command),1):
+            buf.append(command[i])
+        add(command[0],buf)
+
+q = int(input())
+for i in range(q):
+    command = input().strip().split()
+    explorer(command[0],command[1])
 
 ### test_suite
 
@@ -66,6 +69,7 @@ add('classG',['classF'])
 add('classH',['classL'])
 add('classK',['classH','classL'])
 add('classL',[])
+
 
 if __name__ == '__main__':
     assert explorer('classK','classD') == True, "1"
@@ -102,7 +106,7 @@ if __name__ == '__main__':
     assert explorer('classF','classK') == False,"32"
     assert explorer('classB','classG') == False, "33"
     assert explorer('classH','classL') == False, "34"
-    assert explorer('classL','classF') == True, "35"  !!!!!
+    assert explorer('classL','classF') == True, "35"
     assert explorer('classH','classG') == True, "36"
     assert explorer('classD','classA') == True, "37"
     assert explorer('classH','classL') == False, "38"
