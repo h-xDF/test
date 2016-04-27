@@ -1,4 +1,4 @@
-
+# Является ли class1 предком class2
 def add(heir,parent):
     if len(parent) == 0:
         if heir in  space:
@@ -22,7 +22,7 @@ def get(parent,heir):
                 if get(i,heir):
                     return True
     else:
-        return
+        return False
 
 
 def explorer(parent,heir):
